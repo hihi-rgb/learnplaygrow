@@ -10910,11 +10910,11 @@
                                           }
                                         </style>
 
-                                        <div style="display: flex; justify-content: center; align-items: center;">
+                                        <div
+                                          style="display: flex; justify-content: center; align-items: center;">
                                           <div id='product-component-1759738491161'></div>
                                         </div>
                                         <script type="text/javascript">
-                                          /*<![CDATA[*/
                                           (function () {
                                             var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
                                             if (window.ShopifyBuy) {
@@ -10926,81 +10926,47 @@
                                             } else {
                                               loadScript();
                                             }
+
                                             function loadScript() {
                                               var script = document.createElement('script');
                                               script.async = true;
                                               script.src = scriptURL;
-                                              (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+                                              (document.head || document.body).appendChild(script);
                                               script.onload = ShopifyBuyInit;
                                             }
+
                                             function ShopifyBuyInit() {
                                               var client = ShopifyBuy.buildClient({
                                                 domain: 'uspm04-4r.myshopify.com',
                                                 storefrontAccessToken: '9f8dad232b2820eb7533ecbae6688c7b',
                                               });
+
                                               ShopifyBuy.UI.onReady(client).then(function (ui) {
                                                 ui.createComponent('product', {
                                                   id: '8722526044317',
                                                   node: document.getElementById('product-component-1759738491161'),
                                                   moneyFormat: '%24%7B%7Bamount%7D%7D',
                                                   options: {
-                                                    "product": {
-                                                      "styles": {
-                                                        "product": {
-                                                          "@media (min-width: 601px)": {
-                                                            "max-width": "calc(25% - 20px)",
-                                                            "margin-left": "20px",
-                                                            "margin-bottom": "50px"
-                                                          }
-                                                        }
+                                                    product: {
+                                                      contents: {
+                                                        img: false,
+                                                        title: false,
+                                                        price: false,
+                                                        description: false,
+                                                        button: true
                                                       },
-                                                      "text": {
-                                                        "button": "Add to cart"
+                                                      text: {
+                                                        button: 'Add to Cart'
                                                       }
                                                     },
-                                                    "productSet": {
-                                                      "styles": {
-                                                        "products": {
-                                                          "@media (min-width: 601px)": {
-                                                            "margin-left": "-20px"
-                                                          }
-                                                        }
-                                                      }
-                                                    },
-                                                    "modalProduct": {
-                                                      "contents": {
-                                                        "img": false,
-                                                        "imgWithCarousel": true,
-                                                        "button": false,
-                                                        "buttonWithQuantity": true
-                                                      },
-                                                      "styles": {
-                                                        "product": {
-                                                          "@media (min-width: 601px)": {
-                                                            "max-width": "100%",
-                                                            "margin-left": "0px",
-                                                            "margin-bottom": "0px"
-                                                          }
-                                                        }
-                                                      },
-                                                      "text": {
-                                                        "button": "Add to cart"
-                                                      }
-                                                    },
-                                                    "option": {},
-                                                    "cart": {
-                                                      "text": {
-                                                        "total": "Subtotal",
-                                                        "button": "Checkout"
-                                                      }
-                                                    },
-                                                    "toggle": {}
-                                                  },
+                                                    cart: {
+                                                      startOpen: false
+                                                    }
+                                                  }
                                                 });
                                               });
                                             }
                                           })();
-                                          /*]]>*/
                                         </script>
                                       </div>
                                       <script
@@ -13624,37 +13590,6 @@
                   <div data-same-height-display-contents style="--jc:start"
                     class="gPiDxKqxl6 gp-relative gp-flex gp-flex-col">
 
-                    <div role="presentation" data-id="g69sOtWxN2"
-                      style="--bs:none;--bw:1px 1px 1px 1px;--bc:#121212;--shadow:none;--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--pageType:GP_PRODUCT;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--mb:16px;--mb-mobile:13px;--ta:left;--ta-mobile:center"
-                      class="gp-group/image gp-relative force-publish-1755505474690 gp-flex-none gp-h-auto mobile:gp-flex-none mobile:gp-h-auto tablet:gp-flex-none tablet:gp-h-auto g69sOtWxN2">
-                      <div style="border-radius:inherit;--jc:left;--jc-mobile:center"
-                        class="gp-h-full gp-w-full gp-flex pointer-events-auto">
-
-                        <picture style="border-radius:inherit" class="gp-contents">
-
-                          <source media="(max-width: 767px)"
-                            data-srcSet="//mytinythinker.com/cdn/shop/files/gempages_567074455126279249-f2a37947-4c0e-44e3-ae17-c64f110d0464.webp?v=2143593956461780500"
-                            srcset="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjMyIiBoZWlnaHQ9IjIxNSIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj4KICAgIDxkZWZzPgogICAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImctNjMyLTIxNSI+CiAgICAgICAgPHN0b3Agc3RvcC1jb2xvcj0icmdiYSg1MSwgNTEsIDUxLCAwKSIgb2Zmc2V0PSIyMCUiIC8+CiAgICAgICAgPHN0b3Agc3RvcC1jb2xvcj0icmdiYSg1MSwgNTEsIDUxLCAwKSIgb2Zmc2V0PSI1MCUiIC8+CiAgICAgICAgPHN0b3Agc3RvcC1jb2xvcj0icmdiYSg1MSwgNTEsIDUxLCAwKSIgb2Zmc2V0PSI3MCUiIC8+CiAgICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8L2RlZnM+CiAgICA8cmVjdCB3aWR0aD0iNjMyIiBoZWlnaHQ9IjIxNSIgZmlsbD0icmdiYSg1MSwgNTEsIDUxLCAwKSIgLz4KICAgIDxyZWN0IGlkPSJyIiB3aWR0aD0iNjMyIiBoZWlnaHQ9IjIxNSIgZmlsbD0idXJsKCNnLTYzMi0yMTUpIiAvPgogICAgPGFuaW1hdGUgeGxpbms6aHJlZj0iI3IiIGF0dHJpYnV0ZU5hbWU9IngiIGZyb209Ii02MzIiIHRvPSI2MzIiIGR1cj0iMXMiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiAgLz4KICA8L3N2Zz4=" />
-                          <source media="(max-width: 1024px)"
-                            data-srcSet="//mytinythinker.com/cdn/shop/files/gempages_567074455126279249-f2a37947-4c0e-44e3-ae17-c64f110d0464.webp?v=2143593956461780500"
-                            srcset="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjMyIiBoZWlnaHQ9IjIxNSIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj4KICAgIDxkZWZzPgogICAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImctNjMyLTIxNSI+CiAgICAgICAgPHN0b3Agc3RvcC1jb2xvcj0icmdiYSg1MSwgNTEsIDUxLCAwKSIgb2Zmc2V0PSIyMCUiIC8+CiAgICAgICAgPHN0b3Agc3RvcC1jb2xvcj0icmdiYSg1MSwgNTEsIDUxLCAwKSIgb2Zmc2V0PSI1MCUiIC8+CiAgICAgICAgPHN0b3Agc3RvcC1jb2xvcj0icmdiYSg1MSwgNTEsIDUxLCAwKSIgb2Zmc2V0PSI3MCUiIC8+CiAgICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8L2RlZnM+CiAgICA8cmVjdCB3aWR0aD0iNjMyIiBoZWlnaHQ9IjIxNSIgZmlsbD0icmdiYSg1MSwgNTEsIDUxLCAwKSIgLz4KICAgIDxyZWN0IGlkPSJyIiB3aWR0aD0iNjMyIiBoZWlnaHQ9IjIxNSIgZmlsbD0idXJsKCNnLTYzMi0yMTUpIiAvPgogICAgPGFuaW1hdGUgeGxpbms6aHJlZj0iI3IiIGF0dHJpYnV0ZU5hbWU9IngiIGZyb209Ii02MzIiIHRvPSI2MzIiIGR1cj0iMXMiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiAgLz4KICA8L3N2Zz4=" />
-
-
-                          <img
-                            base-src="//mytinythinker.com/cdn/shop/files/gempages_567074455126279249-f2a37947-4c0e-44e3-ae17-c64f110d0464.webp?v=2143593956461780500"
-                            quality-type="{}" quality-percent="{}"
-                            src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjMyIiBoZWlnaHQ9IjIxNSIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj4KICAgIDxkZWZzPgogICAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImctNjMyLTIxNSI+CiAgICAgICAgPHN0b3Agc3RvcC1jb2xvcj0icmdiYSg1MSwgNTEsIDUxLCAwKSIgb2Zmc2V0PSIyMCUiIC8+CiAgICAgICAgPHN0b3Agc3RvcC1jb2xvcj0icmdiYSg1MSwgNTEsIDUxLCAwKSIgb2Zmc2V0PSI1MCUiIC8+CiAgICAgICAgPHN0b3Agc3RvcC1jb2xvcj0icmdiYSg1MSwgNTEsIDUxLCAwKSIgb2Zmc2V0PSI3MCUiIC8+CiAgICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8L2RlZnM+CiAgICA8cmVjdCB3aWR0aD0iNjMyIiBoZWlnaHQ9IjIxNSIgZmlsbD0icmdiYSg1MSwgNTEsIDUxLCAwKSIgLz4KICAgIDxyZWN0IGlkPSJyIiB3aWR0aD0iNjMyIiBoZWlnaHQ9IjIxNSIgZmlsbD0idXJsKCNnLTYzMi0yMTUpIiAvPgogICAgPGFuaW1hdGUgeGxpbms6aHJlZj0iI3IiIGF0dHJpYnV0ZU5hbWU9IngiIGZyb209Ii02MzIiIHRvPSI2MzIiIGR1cj0iMXMiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiAgLz4KICA8L3N2Zz4="
-                            data-src="//mytinythinker.com/cdn/shop/files/gempages_567074455126279249-f2a37947-4c0e-44e3-ae17-c64f110d0464.webp?v=2143593956461780500"
-                            alt="" width="100%"
-                            style="--aspect:auto;--aspect-tablet:auto;--aspect-mobile:auto;--objf:cover;--w:158px;--w-tablet:158px;--w-mobile:131px;--h:auto;--h-tablet:auto;--h-mobile:auto;--b:none;--bc:#000000;--bw:1px 1px 1px 1px;--radiusType:none;--shadow:none"
-                            class="gp-inline-block gp-w-full gp-max-w-full gp_lazyload" />
-
-                        </picture>
-
-                      </div>
-                    </div>
-
-
                     <div data-id="gwX-plP7lL" class="gwX-plP7lL"
                       style="--ta:left;--ta-mobile:center;--bs:none;--bw:1px 1px 1px 1px;--bc:#121212;--shadow:none;--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--pageType:GP_PRODUCT;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--mb:24px;--mb-mobile:23px;--dynamic-source-color:#F4F4F4"
                       data-test-force-publish="1755505474692">
@@ -13696,72 +13631,61 @@
                       <div data-same-height-display-contents style="--jc:start"
                         class="gL0aVXbYIf gp-relative gp-flex gp-flex-col">
 
-                        <gp-button gp-data='{"btnLink":{"link":"#gLoYoIvFyK","target":"_self"}}'
-                          class="gp-flex gp-flex-col">
-                          <div
-                            style="--bs:none;--bw:1px 1px 1px 1px;--bc:#121212;--shadow:none;--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--pageType:GP_PRODUCT;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--mb:10px;--mb-mobile:8px;--ta:left">
-                            <style>
-                              [data-id="gi0EsZVDcw"].gp-button-base::before,
-                              [data-id="gi0EsZVDcw-interaction"].gp-button-base::before {
-
-                                content: "";
-                                height: 100%;
-                                width: 100%;
-                                position: absolute;
-                                pointer-events: none;
-                                top: 0;
-                                left: 0;
-                                border-style: none;
-                                border-width: 1px 1px 1px 1px;
-
-
-
-                                border-bottom-left-radius: 8px;
-                                border-bottom-right-radius: 8px;
-                                border-top-left-radius: 8px;
-                                border-top-right-radius: 8px;
-
-
+                        <div id="product-component-1759738491162"></div>
+                        <script type="text/javascript">
+                          (function () {
+                            var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+                            if (window.ShopifyBuy) {
+                              if (window.ShopifyBuy.UI) {
+                                ShopifyBuyInit();
+                              } else {
+                                loadScript();
                               }
+                            } else {
+                              loadScript();
+                            }
 
+                            function loadScript() {
+                              var script = document.createElement('script');
+                              script.async = true;
+                              script.src = scriptURL;
+                              (document.head || document.body).appendChild(script);
+                              script.onload = ShopifyBuyInit;
+                            }
 
-                              [data-id="gi0EsZVDcw"]:hover::before,
-                              [data-id="gi0EsZVDcw-interaction"]:hover::before {}
-                            </style>
-                            <a class="gp-trigger-button-link gp-hidden" href=#gLoYoIvFyK
-                              target=_self></a>
-                            <a data-id="gi0EsZVDcw" dataId="gi0EsZVDcw" data-state="idle"
-                              aria-label="<p>ADD TO CART</p>" href="#gLoYoIvFyK" target="_self"
-                              style="--w:100%;--w-tablet:100%;--w-mobile:100%;--h:Auto;--h-tablet:Auto;--h-mobile:Auto;--pl:24px;--pr:24px;--pt:18px;--pb:18px;--bblr:8px;--bbrr:8px;--btlr:8px;--btrr:8px;--hvr-bblr:8px;--hvr-bbrr:8px;--hvr-btlr:8px;--hvr-btrr:8px;--shadow:none;--bgi: ;--hvr-bgi: ;--hvr-bg:#EA9A2A;--bg:#EA9A2A;--c:var(--g-c-text-3, text-3);--ff:var(--g-font-Poppins, 'Poppins'), var(--g-font-body, body);--weight:700;--ls:1%;--size:18px;--size-tablet:18px;--size-mobile:16px;--lh:100%;--lh-tablet:100%;--lh-mobile:100%"
-                              class="gi0EsZVDcw gp-text-center gp-button-base gp-group gp-relative gp-inline-flex gp-max-w-full gp-items-center gp-justify-center gp-no-underline gp-transition-colors gp-duration-200 disabled:gp-btn-disabled disabled:gp-opacity-30 gp-text-g-text-3 ">
+                            function ShopifyBuyInit() {
+                              var client = ShopifyBuy.buildClient({
+                                domain: 'uspm04-4r.myshopify.com',
+                                storefrontAccessToken: '9f8dad232b2820eb7533ecbae6688c7b',
+                              });
 
-                              <div class="gp-inline-flex">
-
-
-                                <span data-gp-text
-                                  style="--ff:var(--g-font-Poppins, 'Poppins'), var(--g-font-body, body);--weight:700;--ls:1%;--size:18px;--size-tablet:18px;--size-mobile:16px;--lh:100%;--lh-tablet:100%;--lh-mobile:100%;--ts:none;word-break:break-word"
-                                  class="gp-content-product-button group-active/button:!gp-text-inherit gp-relative gp-flex gp-h-full gp-items-center gp-overflow-hidden gp-break-words group-data-[state=loading]:gp-invisible [&_p]:gp-whitespace-pre-line gp-text button-text">
-                                  <p>ADD TO CART</p>
-                                </span>
-                              </div>
-
-                            </a>
-                          </div>
-                          <script class="gps-link"
-                            delay="https://assets.gemcommerce.com/assets-v2/gp-button-v7-5.js?v=1752819567844"
-                            defer="defer"></script>
-                        </gp-button>
-
-                        <style id="custom-css-gi0EsZVDcw">
-                          .gi0EsZVDcw {
-                            background-image: url(https://cdn.shopify.com/s/files/1/0636/8644/3123/files/gempages_567074455126279249-ef44b71e-f99f-459f-88e0-ed181b68ee3b.webp) !important;
-                            background-size: 100% 100% !important;
-                          }
-                        </style>
-
-
-
-
+                              ShopifyBuy.UI.onReady(client).then(function (ui) {
+                                ui.createComponent('product', {
+                                  id: '8722526044317',
+                                  node: document.getElementById('product-component-1759738491162'),
+                                  moneyFormat: '%24%7B%7Bamount%7D%7D',
+                                  options: {
+                                    product: {
+                                      contents: {
+                                        img: false,
+                                        title: false,
+                                        price: false,
+                                        description: false,
+                                        button: true
+                                      },
+                                      text: {
+                                        button: 'Add to Cart'
+                                      }
+                                    },
+                                    cart: {
+                                      startOpen: false
+                                    }
+                                  }
+                                });
+                              });
+                            }
+                          })();
+                        </script>
 
 
                         <gp-row
@@ -13769,51 +13693,6 @@
                           data-id="g4Hg9sTJbG" id="g4Hg9sTJbG" data-same-height-subgrid-container
                           class="g4Hg9sTJbG gp-relative gp-mx-auto gp-mb-0 gp-grid gp-max-w-full gp-transition-colors gp-duration-200 gp-ease-in-out [&_*]:gp-max-w-full gp-grid-rows-[1fr]"
                           style="--bs:none;--bw:1px 1px 1px 1px;--bc:#121212;--shadow:none;--d:grid;--d-mobile:grid;--d-tablet:grid;--op:100%;--pageType:GP_PRODUCT;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--cg:6px;--cg-mobile:5px;--gtc:minmax(0, auto) minmax(0, auto);--gtc-mobile:minmax(0, auto) minmax(0, auto);--w:var(--g-ct-w, 1200px);--h:auto;--bgc:transparent;--bgi:url();--bgp:50% 50%;--bgs:cover;--bgr:no-repeat;--bga:scroll;--pc:center">
-
-
-                          <div data-same-height-display-contents style="--jc:center"
-                            class="gLizvs9eR0 gp-relative gp-flex gp-flex-col">
-
-                            <div id="gXTwGb5aKr" class="gp-leading-[0] gXTwGb5aKr"
-                              style="--bs:none;--bw:1px 1px 1px 1px;--bc:#121212;--shadow:none;--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--pageType:GP_PRODUCT;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--ta:left">
-                              <div data-id="gXTwGb5aKr"
-                                class="icon-wrapper gp-inline-flex gp-overflow-hidden gXTwGb5aKr "
-                                style="--bs:none;--bw:1px 1px 1px 1px;--bc:#000000">
-
-                                <div>
-                                  <span
-                                    style="--c:var(--g-c-line-3, line-3);--t:rotate(0deg);--w:12px;--w-tablet:12px;--w-mobile:11px;--h:12px;--h-tablet:12px;--h-mobile:11px;--minw:12px;--minw-tablet:12px;--minw-mobile:11px;--height-desktop:12px;--height-tablet:12px;--height-mobile:11px"
-                                    class="gp-inline-flex gp-items-center gp-justify-center gp-overflow-hidden [&>svg]:!gp-h-[var(--height-desktop)] [&>svg]:!gp-w-auto tablet:[&>svg]:!gp-h-[var(--height-tablet)] mobile:[&>svg]:!gp-h-[var(--height-mobile)] gp-text-g-line-3"><svg
-                                      data-id="567092937175860044"
-                                      xmlns="http://www.w3.org/2000/svg" width="13" height="9"
-                                      viewBox="0 0 13 9" fill="none">
-                                      <path
-                                        d="M12.6096 0.373281C12.5301 0.293062 12.4354 0.22939 12.3311 0.185939C12.2268 0.142488 12.115 0.120117 12.002 0.120117C11.889 0.120117 11.7771 0.142488 11.6728 0.185939C11.5685 0.22939 11.4739 0.293062 11.3943 0.373281L5.0181 6.75806L2.33923 4.07063C2.25662 3.99083 2.1591 3.92808 2.05224 3.88597C1.94538 3.84386 1.83128 3.82321 1.71643 3.82519C1.60159 3.82718 1.48827 3.85177 1.38293 3.89755C1.27759 3.94334 1.1823 4.00942 1.1025 4.09203C1.0227 4.17464 0.959954 4.27216 0.917842 4.37902C0.87573 4.48588 0.855078 4.59998 0.857064 4.71482C0.859051 4.82966 0.883639 4.94299 0.929422 5.04833C0.975205 5.15367 1.04129 5.24896 1.1239 5.32876L4.41043 8.61529C4.49 8.69551 4.58466 8.75918 4.68895 8.80263C4.79325 8.84608 4.90511 8.86845 5.0181 8.86845C5.13108 8.86845 5.24295 8.84608 5.34724 8.80263C5.45154 8.75918 5.5462 8.69551 5.62576 8.61529L12.6096 1.63141C12.6965 1.55126 12.7659 1.45399 12.8133 1.34572C12.8607 1.23746 12.8852 1.12054 12.8852 1.00234C12.8852 0.884148 12.8607 0.767232 12.8133 0.658965C12.7659 0.550698 12.6965 0.453427 12.6096 0.373281Z"
-                                        fill="white" />
-                                    </svg></span>
-                                </div>
-                              </div>
-                            </div>
-
-                          </div>
-                          <div data-same-height-display-contents style="--jc:center"
-                            class="g6i3WgMTXJ gp-relative gp-flex gp-flex-col">
-
-
-                            <div data-id="glEIHp6Liw" class="glEIHp6Liw"
-                              style="--ta:left;--bs:none;--bw:1px 1px 1px 1px;--bc:#121212;--shadow:none;--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--pageType:GP_PRODUCT;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--dynamic-source-color:#F4F4F4"
-                              data-test-force-publish="1755505474705">
-                              <div class="gp-flex" style="--jc:left">
-                                <div data-gp-text class=" gp-text-instant gp-text"
-                                  style="--w:100%;--w-tablet:100%;--w-mobile:100%;--tdt:auto;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--ts:none;--ta:left;--line-clamp:unset;--line-clamp-tablet:unset;--line-clamp-mobile:unset;--ff:var(--g-font-Poppins, 'Poppins'), var(--g-font-body, body);--weight:400;--ls:0px;--size:15px;--size-tablet:15px;--size-mobile:13px;--lh:136%;--lh-tablet:136%;--lh-mobile:138%;--c:#FFFFFF;word-break:break-word;--bgc:transparent;--bgi:url();--bgp:50% 50%;--bgs:cover;--bgr:no-repeat;--bga:scroll;overflow:hidden;--tdl: ;">
-                                  <p>100% Satisfaction Guarantee</p>
-                                </div>
-                              </div>
-                            </div>
-
-                          </div>
-
-
                         </gp-row>
 
 
@@ -13835,14 +13714,6 @@
             </gp-row>
 
 
-            <style id="custom-css-gDHLXAj9Dr">
-              .gDHLXAj9Dr {
-                overflow: hidden;
-              }
-            </style>
-
-
-
 
 
 
@@ -13856,8 +13727,7 @@
               <div data-same-height-display-contents style="--jc:start"
                 class="gKtM6szTry gp-relative gp-flex gp-flex-col">
 
-                <gp-button gp-data='{"btnLink":{"link":"#gLoYoIvFyK","target":"_self"}}'
-                  class="gp-flex gp-flex-col">
+                <gp-button class="gp-flex gp-flex-col">
                   <div
                     style="--bs:none;--bw:1px 1px 1px 1px;--bc:#121212;--shadow:none;--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--pageType:GP_PRODUCT;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--mb:10px;--mb-mobile:8px;--ta:left">
                     <style>
@@ -13888,19 +13758,68 @@
                       [data-id="gEev8eHHvo"]:hover::before,
                       [data-id="gEev8eHHvo-interaction"]:hover::before {}
                     </style>
-                    <a class="gp-trigger-button-link gp-hidden" href=#gLoYoIvFyK target=_self></a>
-                    <a data-id="gEev8eHHvo" dataId="gEev8eHHvo" data-state="idle"
-                      aria-label="<p>ADD TO CART</p>" href="#gLoYoIvFyK" target="_self"
-                      style="--w:100%;--w-tablet:100%;--w-mobile:100%;--h:Auto;--h-tablet:Auto;--h-mobile:Auto;--pl:24px;--pr:24px;--pt:18px;--pb:18px;--bblr:8px;--bbrr:8px;--btlr:8px;--btrr:8px;--hvr-bblr:8px;--hvr-bbrr:8px;--hvr-btlr:8px;--hvr-btrr:8px;--shadow:none;--bgi: ;--hvr-bgi: ;--hvr-bg:#EA9A2A;--bg:#EA9A2A;--c:var(--g-c-text-3, text-3);--ff:var(--g-font-Poppins, 'Poppins'), var(--g-font-body, body);--weight:700;--ls:1%;--size:18px;--size-tablet:18px;--size-mobile:16px;--lh:100%;--lh-tablet:100%;--lh-mobile:100%"
-                      class="gEev8eHHvo gp-text-center gp-button-base gp-group gp-relative gp-inline-flex gp-max-w-full gp-items-center gp-justify-center gp-no-underline gp-transition-colors gp-duration-200 disabled:gp-btn-disabled disabled:gp-opacity-30 gp-text-g-text-3 ">
+                    <a data-id="gEev8eHHvo" dataId="gEev8eHHvo" data-state="idle">
 
                       <div class="gp-inline-flex">
+                        <span>
+                          <div
+                            style="display: flex; justify-content: center; align-items: center; margin-left: 25px;">
+                            <div id='product-component-1759738491163'></div>
+                          </div>
+                          <script type="text/javascript">
+                            (function () {
+                              var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+                              if (window.ShopifyBuy) {
+                                if (window.ShopifyBuy.UI) {
+                                  ShopifyBuyInit();
+                                } else {
+                                  loadScript();
+                                }
+                              } else {
+                                loadScript();
+                              }
 
+                              function loadScript() {
+                                var script = document.createElement('script');
+                                script.async = true;
+                                script.src = scriptURL;
+                                (document.head || document.body).appendChild(script);
+                                script.onload = ShopifyBuyInit;
+                              }
 
-                        <span data-gp-text
-                          style="--ff:var(--g-font-Poppins, 'Poppins'), var(--g-font-body, body);--weight:700;--ls:1%;--size:18px;--size-tablet:18px;--size-mobile:16px;--lh:100%;--lh-tablet:100%;--lh-mobile:100%;--ts:none;word-break:break-word"
-                          class="gp-content-product-button group-active/button:!gp-text-inherit gp-relative gp-flex gp-h-full gp-items-center gp-overflow-hidden gp-break-words group-data-[state=loading]:gp-invisible [&_p]:gp-whitespace-pre-line gp-text button-text">
-                          <p>ADD TO CART</p>
+                              function ShopifyBuyInit() {
+                                var client = ShopifyBuy.buildClient({
+                                  domain: 'uspm04-4r.myshopify.com',
+                                  storefrontAccessToken: '9f8dad232b2820eb7533ecbae6688c7b',
+                                });
+
+                                ShopifyBuy.UI.onReady(client).then(function (ui) {
+                                  ui.createComponent('product', {
+                                    id: '8722526044317',
+                                    node: document.getElementById('product-component-1759738491163'),
+                                    moneyFormat: '%24%7B%7Bamount%7D%7D',
+                                    options: {
+                                      product: {
+                                        contents: {
+                                          img: false,
+                                          title: false,
+                                          price: false,
+                                          description: false,
+                                          button: true
+                                        },
+                                        text: {
+                                          button: 'Add to Cart'
+                                        }
+                                      },
+                                      cart: {
+                                        startOpen: false
+                                      }
+                                    }
+                                  });
+                                });
+                              }
+                            })();
+                          </script>
                         </span>
                       </div>
 
@@ -15853,125 +15772,68 @@
               <div data-same-height-display-contents style="--jc:start"
                 class="gMFlFYULjM gp-relative gp-flex gp-flex-col">
 
-                <gp-button gp-data='{"btnLink":{"link":"#gLoYoIvFyK","target":"_self"}}'
-                  class="gp-flex gp-flex-col">
-                  <div
-                    style="--bs:none;--bw:1px 1px 1px 1px;--bc:#121212;--shadow:none;--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--pageType:GP_PRODUCT;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--mb:10px;--mb-mobile:8px;--ta:left">
-                    <style>
-                      [data-id="gYomDz4Hxb"].gp-button-base::before,
-                      [data-id="gYomDz4Hxb-interaction"].gp-button-base::before {
+                <gp-button class="gp-flex gp-flex-col">
+                  <span>
+                    <div
+                      style="display: flex; justify-content: center; align-items: center; margin-left: 25px;">
+                      <div id='product-component-1759738491164'></div>
+                    </div>
+                    <script type="text/javascript">
+                      (function () {
+                        var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+                        if (window.ShopifyBuy) {
+                          if (window.ShopifyBuy.UI) {
+                            ShopifyBuyInit();
+                          } else {
+                            loadScript();
+                          }
+                        } else {
+                          loadScript();
+                        }
 
-                        content: "";
-                        height: 100%;
-                        width: 100%;
-                        position: absolute;
-                        pointer-events: none;
-                        top: 0;
-                        left: 0;
-                        border-style: none;
-                        border-width: 1px 1px 1px 1px;
+                        function loadScript() {
+                          var script = document.createElement('script');
+                          script.async = true;
+                          script.src = scriptURL;
+                          (document.head || document.body).appendChild(script);
+                          script.onload = ShopifyBuyInit;
+                        }
 
+                        function ShopifyBuyInit() {
+                          var client = ShopifyBuy.buildClient({
+                            domain: 'uspm04-4r.myshopify.com',
+                            storefrontAccessToken: '9f8dad232b2820eb7533ecbae6688c7b',
+                          });
 
-
-                        border-bottom-left-radius: 8px;
-                        border-bottom-right-radius: 8px;
-                        border-top-left-radius: 8px;
-                        border-top-right-radius: 8px;
-
-
-                      }
-
-
-                      [data-id="gYomDz4Hxb"]:hover::before,
-                      [data-id="gYomDz4Hxb-interaction"]:hover::before {}
-                    </style>
-                    <a class="gp-trigger-button-link gp-hidden" href=#gLoYoIvFyK target=_self></a>
-                    <a data-id="gYomDz4Hxb" dataId="gYomDz4Hxb" data-state="idle"
-                      aria-label="<p>ADD TO CART</p>" href="#gLoYoIvFyK" target="_self"
-                      style="--w:100%;--w-tablet:100%;--w-mobile:100%;--h:Auto;--h-tablet:Auto;--h-mobile:Auto;--pl:24px;--pr:24px;--pt:18px;--pb:18px;--bblr:8px;--bbrr:8px;--btlr:8px;--btrr:8px;--hvr-bblr:8px;--hvr-bbrr:8px;--hvr-btlr:8px;--hvr-btrr:8px;--shadow:none;--bgi: ;--hvr-bgi: ;--hvr-bg:#EA9A2A;--bg:#EA9A2A;--c:var(--g-c-text-3, text-3);--ff:var(--g-font-Poppins, 'Poppins'), var(--g-font-body, body);--weight:700;--ls:1%;--size:18px;--size-tablet:18px;--size-mobile:16px;--lh:100%;--lh-tablet:100%;--lh-mobile:100%"
-                      class="gYomDz4Hxb gp-text-center gp-button-base gp-group gp-relative gp-inline-flex gp-max-w-full gp-items-center gp-justify-center gp-no-underline gp-transition-colors gp-duration-200 disabled:gp-btn-disabled disabled:gp-opacity-30 gp-text-g-text-3 ">
-
-                      <div class="gp-inline-flex">
-
-
-                        <span data-gp-text
-                          style="--ff:var(--g-font-Poppins, 'Poppins'), var(--g-font-body, body);--weight:700;--ls:1%;--size:18px;--size-tablet:18px;--size-mobile:16px;--lh:100%;--lh-tablet:100%;--lh-mobile:100%;--ts:none;word-break:break-word"
-                          class="gp-content-product-button group-active/button:!gp-text-inherit gp-relative gp-flex gp-h-full gp-items-center gp-overflow-hidden gp-break-words group-data-[state=loading]:gp-invisible [&_p]:gp-whitespace-pre-line gp-text button-text">
-                          <p>ADD TO CART</p>
-                        </span>
-                      </div>
-
-                    </a>
-                  </div>
-                  <script class="gps-link"
-                    delay="https://assets.gemcommerce.com/assets-v2/gp-button-v7-5.js?v=1752819567844"
-                    defer="defer"></script>
+                          ShopifyBuy.UI.onReady(client).then(function (ui) {
+                            ui.createComponent('product', {
+                              id: '8722526044317',
+                              node: document.getElementById('product-component-1759738491164'),
+                              moneyFormat: '%24%7B%7Bamount%7D%7D',
+                              options: {
+                                product: {
+                                  contents: {
+                                    img: false,
+                                    title: false,
+                                    price: false,
+                                    description: false,
+                                    button: true
+                                  },
+                                  text: {
+                                    button: 'Add to Cart'
+                                  }
+                                },
+                                cart: {
+                                  startOpen: false
+                                }
+                              }
+                            });
+                          });
+                        }
+                      })();
+                    </script>
+                  </span>
                 </gp-button>
-
-                <style id="custom-css-gYomDz4Hxb">
-                  .gYomDz4Hxb {
-                    background-image: url(https://cdn.shopify.com/s/files/1/0636/8644/3123/files/gempages_567074455126279249-ef44b71e-f99f-459f-88e0-ed181b68ee3b.webp) !important;
-                    background-size: 100% 100% !important;
-                  }
-                </style>
-
-
-
-
-
-
-                <gp-row
-                  gp-data='{"background":{"desktop":{"attachment":"scroll","color":"transparent","image":{"height":0,"src":"","width":0},"position":{"x":50,"y":50},"repeat":"no-repeat","size":"cover","type":"color"}},"uid":"gXGIMHqeOu"}'
-                  data-id="gXGIMHqeOu" id="gXGIMHqeOu" data-same-height-subgrid-container
-                  class="gXGIMHqeOu gp-relative gp-mx-auto gp-mb-0 gp-grid gp-max-w-full gp-transition-colors gp-duration-200 gp-ease-in-out [&_*]:gp-max-w-full gp-grid-rows-[1fr]"
-                  style="--bs:none;--bw:1px 1px 1px 1px;--bc:#121212;--shadow:none;--d:grid;--d-mobile:grid;--d-tablet:grid;--op:100%;--pageType:GP_PRODUCT;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--cg:6px;--cg-mobile:5px;--gtc:minmax(0, auto) minmax(0, auto);--gtc-mobile:minmax(0, auto) minmax(0, auto);--w:var(--g-ct-w, 1200px);--h:auto;--bgc:transparent;--bgi:url();--bgp:50% 50%;--bgs:cover;--bgr:no-repeat;--bga:scroll;--pc:center">
-
-
-                  <div data-same-height-display-contents style="--jc:center"
-                    class="gSCVU8XeWd gp-relative gp-flex gp-flex-col">
-
-                    <div id="goSEwbjM5a" class="gp-leading-[0] goSEwbjM5a"
-                      style="--bs:none;--bw:1px 1px 1px 1px;--bc:#121212;--shadow:none;--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--pageType:GP_PRODUCT;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--ta:left">
-                      <div data-id="goSEwbjM5a"
-                        class="icon-wrapper gp-inline-flex gp-overflow-hidden goSEwbjM5a "
-                        style="--bs:none;--bw:1px 1px 1px 1px;--bc:#000000">
-
-                        <div>
-                          <span
-                            style="--c:var(--g-c-line-3, line-3);--t:rotate(0deg);--w:12px;--w-tablet:12px;--w-mobile:11px;--h:12px;--h-tablet:12px;--h-mobile:11px;--minw:12px;--minw-tablet:12px;--minw-mobile:11px;--height-desktop:12px;--height-tablet:12px;--height-mobile:11px"
-                            class="gp-inline-flex gp-items-center gp-justify-center gp-overflow-hidden [&>svg]:!gp-h-[var(--height-desktop)] [&>svg]:!gp-w-auto tablet:[&>svg]:!gp-h-[var(--height-tablet)] mobile:[&>svg]:!gp-h-[var(--height-mobile)] gp-text-g-line-3"><svg
-                              data-id="567092937175860044" xmlns="http://www.w3.org/2000/svg"
-                              width="13" height="9" viewBox="0 0 13 9" fill="none">
-                              <path
-                                d="M12.6096 0.373281C12.5301 0.293062 12.4354 0.22939 12.3311 0.185939C12.2268 0.142488 12.115 0.120117 12.002 0.120117C11.889 0.120117 11.7771 0.142488 11.6728 0.185939C11.5685 0.22939 11.4739 0.293062 11.3943 0.373281L5.0181 6.75806L2.33923 4.07063C2.25662 3.99083 2.1591 3.92808 2.05224 3.88597C1.94538 3.84386 1.83128 3.82321 1.71643 3.82519C1.60159 3.82718 1.48827 3.85177 1.38293 3.89755C1.27759 3.94334 1.1823 4.00942 1.1025 4.09203C1.0227 4.17464 0.959954 4.27216 0.917842 4.37902C0.87573 4.48588 0.855078 4.59998 0.857064 4.71482C0.859051 4.82966 0.883639 4.94299 0.929422 5.04833C0.975205 5.15367 1.04129 5.24896 1.1239 5.32876L4.41043 8.61529C4.49 8.69551 4.58466 8.75918 4.68895 8.80263C4.79325 8.84608 4.90511 8.86845 5.0181 8.86845C5.13108 8.86845 5.24295 8.84608 5.34724 8.80263C5.45154 8.75918 5.5462 8.69551 5.62576 8.61529L12.6096 1.63141C12.6965 1.55126 12.7659 1.45399 12.8133 1.34572C12.8607 1.23746 12.8852 1.12054 12.8852 1.00234C12.8852 0.884148 12.8607 0.767232 12.8133 0.658965C12.7659 0.550698 12.6965 0.453427 12.6096 0.373281Z"
-                                fill="white" />
-                            </svg></span>
-                        </div>
-                      </div>
-                    </div>
-
-                  </div>
-                  <div data-same-height-display-contents style="--jc:center"
-                    class="gXv-0O7ZRT gp-relative gp-flex gp-flex-col">
-
-
-                    <div data-id="g_NqIcfW0l" class="g_NqIcfW0l"
-                      style="--ta:left;--bs:none;--bw:1px 1px 1px 1px;--bc:#121212;--shadow:none;--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--pageType:GP_PRODUCT;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--dynamic-source-color:#F4F4F4"
-                      data-test-force-publish="1755505473011">
-                      <div class="gp-flex" style="--jc:left">
-                        <div data-gp-text class=" gp-text-instant gp-text"
-                          style="--w:100%;--w-tablet:100%;--w-mobile:100%;--tdt:auto;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--ts:none;--ta:left;--line-clamp:unset;--line-clamp-tablet:unset;--line-clamp-mobile:unset;--ff:var(--g-font-Poppins, 'Poppins'), var(--g-font-body, body);--weight:400;--ls:0px;--size:15px;--size-tablet:15px;--size-mobile:13px;--lh:136%;--lh-tablet:136%;--lh-mobile:138%;--c:#FFFFFF;word-break:break-word;--bgc:transparent;--bgi:url();--bgp:50% 50%;--bgs:cover;--bgr:no-repeat;--bga:scroll;overflow:hidden;--tdl: ;">
-                          <p>100% Satisfaction Guarantee</p>
-                        </div>
-                      </div>
-                    </div>
-
-                  </div>
-
-
-                </gp-row>
-
-
               </div>
 
 
@@ -17207,149 +17069,74 @@
                       <div data-same-height-display-contents style="--jc:start"
                         class="grHgCF-KI7 gp-relative gp-flex gp-flex-col">
 
-                        <gp-button gp-data='{"btnLink":{"link":"#gLoYoIvFyK","target":"_self"}}'
-                          class="gp-flex gp-flex-col">
-                          <div
-                            style="--bs:none;--bw:1px 1px 1px 1px;--bc:#121212;--shadow:none;--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--pageType:GP_PRODUCT;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--mb:10px;--mb-mobile:8px;--ta:left">
-                            <style>
-                              [data-id="g5fBoan4fy"].gp-button-base::before,
-                              [data-id="g5fBoan4fy-interaction"].gp-button-base::before {
+                        <gp-button class="gp-flex gp-flex-col">
+                          <span>
+                            <div
+                              style="display: flex; justify-content: center; align-items: center; margin-left: 25px;">
+                              <div id='product-component-1759738491165'></div>
+                            </div>
+                            <script type="text/javascript">
+                              (function () {
+                                var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+                                if (window.ShopifyBuy) {
+                                  if (window.ShopifyBuy.UI) {
+                                    ShopifyBuyInit();
+                                  } else {
+                                    loadScript();
+                                  }
+                                } else {
+                                  loadScript();
+                                }
 
-                                content: "";
-                                height: 100%;
-                                width: 100%;
-                                position: absolute;
-                                pointer-events: none;
-                                top: 0;
-                                left: 0;
-                                border-style: none;
-                                border-width: 1px 1px 1px 1px;
+                                function loadScript() {
+                                  var script = document.createElement('script');
+                                  script.async = true;
+                                  script.src = scriptURL;
+                                  (document.head || document.body).appendChild(script);
+                                  script.onload = ShopifyBuyInit;
+                                }
 
+                                function ShopifyBuyInit() {
+                                  var client = ShopifyBuy.buildClient({
+                                    domain: 'uspm04-4r.myshopify.com',
+                                    storefrontAccessToken: '9f8dad232b2820eb7533ecbae6688c7b',
+                                  });
 
-
-                                border-bottom-left-radius: 8px;
-                                border-bottom-right-radius: 8px;
-                                border-top-left-radius: 8px;
-                                border-top-right-radius: 8px;
-
-
-                              }
-
-
-                              [data-id="g5fBoan4fy"]:hover::before,
-                              [data-id="g5fBoan4fy-interaction"]:hover::before {}
-                            </style>
-                            <a class="gp-trigger-button-link gp-hidden" href=#gLoYoIvFyK
-                              target=_self></a>
-                            <a data-id="g5fBoan4fy" dataId="g5fBoan4fy" data-state="idle"
-                              aria-label="<p>ADD TO CART</p>" href="#gLoYoIvFyK" target="_self"
-                              style="--w:100%;--w-tablet:100%;--w-mobile:100%;--h:Auto;--h-tablet:Auto;--h-mobile:Auto;--pl:24px;--pr:24px;--pt:18px;--pb:18px;--bblr:8px;--bbrr:8px;--btlr:8px;--btrr:8px;--hvr-bblr:8px;--hvr-bbrr:8px;--hvr-btlr:8px;--hvr-btrr:8px;--shadow:none;--bgi: ;--hvr-bgi: ;--hvr-bg:#EA9A2A;--bg:#EA9A2A;--c:var(--g-c-text-3, text-3);--ff:var(--g-font-Poppins, 'Poppins'), var(--g-font-body, body);--weight:700;--ls:1%;--size:18px;--size-tablet:18px;--size-mobile:16px;--lh:100%;--lh-tablet:100%;--lh-mobile:100%"
-                              class="g5fBoan4fy gp-text-center gp-button-base gp-group gp-relative gp-inline-flex gp-max-w-full gp-items-center gp-justify-center gp-no-underline gp-transition-colors gp-duration-200 disabled:gp-btn-disabled disabled:gp-opacity-30 gp-text-g-text-3 ">
-
-                              <div class="gp-inline-flex">
-
-
-                                <span data-gp-text
-                                  style="--ff:var(--g-font-Poppins, 'Poppins'), var(--g-font-body, body);--weight:700;--ls:1%;--size:18px;--size-tablet:18px;--size-mobile:16px;--lh:100%;--lh-tablet:100%;--lh-mobile:100%;--ts:none;word-break:break-word"
-                                  class="gp-content-product-button group-active/button:!gp-text-inherit gp-relative gp-flex gp-h-full gp-items-center gp-overflow-hidden gp-break-words group-data-[state=loading]:gp-invisible [&_p]:gp-whitespace-pre-line gp-text button-text">
-                                  <p>ADD TO CART</p>
-                                </span>
-                              </div>
-
-                            </a>
-                          </div>
-                          <script class="gps-link"
-                            delay="https://assets.gemcommerce.com/assets-v2/gp-button-v7-5.js?v=1752819567844"
-                            defer="defer"></script>
+                                  ShopifyBuy.UI.onReady(client).then(function (ui) {
+                                    ui.createComponent('product', {
+                                      id: '8722526044317',
+                                      node: document.getElementById('product-component-1759738491165'),
+                                      moneyFormat: '%24%7B%7Bamount%7D%7D',
+                                      options: {
+                                        product: {
+                                          contents: {
+                                            img: false,
+                                            title: false,
+                                            price: false,
+                                            description: false,
+                                            button: true
+                                          },
+                                          text: {
+                                            button: 'Add to Cart'
+                                          }
+                                        },
+                                        cart: {
+                                          startOpen: false
+                                        }
+                                      }
+                                    });
+                                  });
+                                }
+                              })();
+                            </script>
+                          </span>
                         </gp-button>
-
-                        <style id="custom-css-g5fBoan4fy">
-                          .g5fBoan4fy {
-                            background-image: url(https://cdn.shopify.com/s/files/1/0636/8644/3123/files/gempages_567074455126279249-ef44b71e-f99f-459f-88e0-ed181b68ee3b.webp) !important;
-                            background-size: 100% 100% !important;
-                          }
-                        </style>
-
-
-
-
-
-
-                        <gp-row
-                          gp-data='{"background":{"desktop":{"attachment":"scroll","color":"transparent","image":{"height":0,"src":"","width":0},"position":{"x":50,"y":50},"repeat":"no-repeat","size":"cover","type":"color"}},"uid":"gA7NQWIr30"}'
-                          data-id="gA7NQWIr30" id="gA7NQWIr30" data-same-height-subgrid-container
-                          class="gA7NQWIr30 gp-relative gp-mx-auto gp-mb-0 gp-grid gp-max-w-full gp-transition-colors gp-duration-200 gp-ease-in-out [&_*]:gp-max-w-full gp-grid-rows-[1fr]"
-                          style="--bs:none;--bw:1px 1px 1px 1px;--bc:#121212;--shadow:none;--d:grid;--d-mobile:grid;--d-tablet:grid;--op:100%;--pageType:GP_PRODUCT;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--cg:6px;--cg-mobile:5px;--gtc:minmax(0, auto) minmax(0, auto);--gtc-mobile:minmax(0, auto) minmax(0, auto);--w:var(--g-ct-w, 1200px);--h:auto;--bgc:transparent;--bgi:url();--bgp:50% 50%;--bgs:cover;--bgr:no-repeat;--bga:scroll;--pc:center">
-
-
-                          <div data-same-height-display-contents style="--jc:center"
-                            class="gDzU0OFs5j gp-relative gp-flex gp-flex-col">
-
-                            <div id="g8OUazXni3" class="gp-leading-[0] g8OUazXni3"
-                              style="--bs:none;--bw:1px 1px 1px 1px;--bc:#121212;--shadow:none;--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--pageType:GP_PRODUCT;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--ta:left">
-                              <div data-id="g8OUazXni3"
-                                class="icon-wrapper gp-inline-flex gp-overflow-hidden g8OUazXni3 "
-                                style="--bs:none;--bw:1px 1px 1px 1px;--bc:#000000">
-
-                                <div>
-                                  <span
-                                    style="--c:var(--g-c-line-3, line-3);--t:rotate(0deg);--w:12px;--w-tablet:12px;--w-mobile:11px;--h:12px;--h-tablet:12px;--h-mobile:11px;--minw:12px;--minw-tablet:12px;--minw-mobile:11px;--height-desktop:12px;--height-tablet:12px;--height-mobile:11px"
-                                    class="gp-inline-flex gp-items-center gp-justify-center gp-overflow-hidden [&>svg]:!gp-h-[var(--height-desktop)] [&>svg]:!gp-w-auto tablet:[&>svg]:!gp-h-[var(--height-tablet)] mobile:[&>svg]:!gp-h-[var(--height-mobile)] gp-text-g-line-3"><svg
-                                      data-id="567092937175860044"
-                                      xmlns="http://www.w3.org/2000/svg" width="13" height="9"
-                                      viewBox="0 0 13 9" fill="none">
-                                      <path
-                                        d="M12.6096 0.373281C12.5301 0.293062 12.4354 0.22939 12.3311 0.185939C12.2268 0.142488 12.115 0.120117 12.002 0.120117C11.889 0.120117 11.7771 0.142488 11.6728 0.185939C11.5685 0.22939 11.4739 0.293062 11.3943 0.373281L5.0181 6.75806L2.33923 4.07063C2.25662 3.99083 2.1591 3.92808 2.05224 3.88597C1.94538 3.84386 1.83128 3.82321 1.71643 3.82519C1.60159 3.82718 1.48827 3.85177 1.38293 3.89755C1.27759 3.94334 1.1823 4.00942 1.1025 4.09203C1.0227 4.17464 0.959954 4.27216 0.917842 4.37902C0.87573 4.48588 0.855078 4.59998 0.857064 4.71482C0.859051 4.82966 0.883639 4.94299 0.929422 5.04833C0.975205 5.15367 1.04129 5.24896 1.1239 5.32876L4.41043 8.61529C4.49 8.69551 4.58466 8.75918 4.68895 8.80263C4.79325 8.84608 4.90511 8.86845 5.0181 8.86845C5.13108 8.86845 5.24295 8.84608 5.34724 8.80263C5.45154 8.75918 5.5462 8.69551 5.62576 8.61529L12.6096 1.63141C12.6965 1.55126 12.7659 1.45399 12.8133 1.34572C12.8607 1.23746 12.8852 1.12054 12.8852 1.00234C12.8852 0.884148 12.8607 0.767232 12.8133 0.658965C12.7659 0.550698 12.6965 0.453427 12.6096 0.373281Z"
-                                        fill="white" />
-                                    </svg></span>
-                                </div>
-                              </div>
-                            </div>
-
-                          </div>
-                          <div data-same-height-display-contents style="--jc:center"
-                            class="gPnBRgV0A2 gp-relative gp-flex gp-flex-col">
-
-
-                            <div data-id="glB8zPrpOB" class="glB8zPrpOB"
-                              style="--ta:left;--bs:none;--bw:1px 1px 1px 1px;--bc:#121212;--shadow:none;--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--pageType:GP_PRODUCT;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--dynamic-source-color:#F4F4F4"
-                              data-test-force-publish="1755505468141">
-                              <div class="gp-flex" style="--jc:left">
-                                <div data-gp-text class=" gp-text-instant gp-text"
-                                  style="--w:100%;--w-tablet:100%;--w-mobile:100%;--tdt:auto;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--ts:none;--ta:left;--line-clamp:unset;--line-clamp-tablet:unset;--line-clamp-mobile:unset;--ff:var(--g-font-Poppins, 'Poppins'), var(--g-font-body, body);--weight:400;--ls:0px;--size:15px;--size-tablet:15px;--size-mobile:13px;--lh:136%;--lh-tablet:136%;--lh-mobile:138%;--c:#FFFFFF;word-break:break-word;--bgc:transparent;--bgi:url();--bgp:50% 50%;--bgs:cover;--bgr:no-repeat;--bga:scroll;overflow:hidden;--tdl: ;">
-                                  <p>100% Satisfaction Guarantee</p>
-                                </div>
-                              </div>
-                            </div>
-
-                          </div>
-
-
-                        </gp-row>
-
-
                       </div>
-
-
                     </gp-row>
-
-
                   </div>
-
-
                 </gp-row>
-
-
               </div>
-
-
             </gp-row>
-
-
-
-
-
-
 
             <gp-row
               gp-data='{"background":{"desktop":{"attachment":"scroll","color":"transparent","image":{"height":0,"src":"","width":0},"position":{"x":50,"y":50},"repeat":"no-repeat","size":"cover","type":"color"}},"uid":"guzcipdeDG"}'
@@ -17361,59 +17148,67 @@
               <div data-same-height-display-contents style="--jc:start"
                 class="g5pE9X0pVs gp-relative gp-flex gp-flex-col">
 
-                <gp-button gp-data='{"btnLink":{"link":"#gLoYoIvFyK","target":"_self"}}'
-                  class="gp-flex gp-flex-col">
-                  <div
-                    style="--bs:none;--bw:1px 1px 1px 1px;--bc:#121212;--shadow:none;--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--pageType:GP_PRODUCT;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--mb:10px;--mb-mobile:8px;--ta:left">
-                    <style>
-                      [data-id="gODuSJBJTq"].gp-button-base::before,
-                      [data-id="gODuSJBJTq-interaction"].gp-button-base::before {
+                <gp-button class="gp-flex gp-flex-col">
+                  <span>
+                    <div
+                      style="display: flex; justify-content: center; align-items: center; margin-left: 25px;">
+                      <div id='product-component-1759738491166'></div>
+                    </div>
+                    <script type="text/javascript">
+                      (function () {
+                        var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+                        if (window.ShopifyBuy) {
+                          if (window.ShopifyBuy.UI) {
+                            ShopifyBuyInit();
+                          } else {
+                            loadScript();
+                          }
+                        } else {
+                          loadScript();
+                        }
 
-                        content: "";
-                        height: 100%;
-                        width: 100%;
-                        position: absolute;
-                        pointer-events: none;
-                        top: 0;
-                        left: 0;
-                        border-style: none;
-                        border-width: 1px 1px 1px 1px;
+                        function loadScript() {
+                          var script = document.createElement('script');
+                          script.async = true;
+                          script.src = scriptURL;
+                          (document.head || document.body).appendChild(script);
+                          script.onload = ShopifyBuyInit;
+                        }
 
+                        function ShopifyBuyInit() {
+                          var client = ShopifyBuy.buildClient({
+                            domain: 'uspm04-4r.myshopify.com',
+                            storefrontAccessToken: '9f8dad232b2820eb7533ecbae6688c7b',
+                          });
 
-
-                        border-bottom-left-radius: 8px;
-                        border-bottom-right-radius: 8px;
-                        border-top-left-radius: 8px;
-                        border-top-right-radius: 8px;
-
-
-                      }
-
-
-                      [data-id="gODuSJBJTq"]:hover::before,
-                      [data-id="gODuSJBJTq-interaction"]:hover::before {}
-                    </style>
-                    <a class="gp-trigger-button-link gp-hidden" href=#gLoYoIvFyK target=_self></a>
-                    <a data-id="gODuSJBJTq" dataId="gODuSJBJTq" data-state="idle"
-                      aria-label="<p>ADD TO CART</p>" href="#gLoYoIvFyK" target="_self"
-                      style="--w:100%;--w-tablet:100%;--w-mobile:100%;--h:Auto;--h-tablet:Auto;--h-mobile:Auto;--pl:24px;--pr:24px;--pt:18px;--pb:18px;--bblr:8px;--bbrr:8px;--btlr:8px;--btrr:8px;--hvr-bblr:8px;--hvr-bbrr:8px;--hvr-btlr:8px;--hvr-btrr:8px;--shadow:none;--bgi: ;--hvr-bgi: ;--hvr-bg:#EA9A2A;--bg:#EA9A2A;--c:var(--g-c-text-3, text-3);--ff:var(--g-font-Poppins, 'Poppins'), var(--g-font-body, body);--weight:700;--ls:1%;--size:18px;--size-tablet:18px;--size-mobile:16px;--lh:100%;--lh-tablet:100%;--lh-mobile:100%"
-                      class="gODuSJBJTq gp-text-center gp-button-base gp-group gp-relative gp-inline-flex gp-max-w-full gp-items-center gp-justify-center gp-no-underline gp-transition-colors gp-duration-200 disabled:gp-btn-disabled disabled:gp-opacity-30 gp-text-g-text-3 ">
-
-                      <div class="gp-inline-flex">
-
-
-                        <span data-gp-text
-                          style="--ff:var(--g-font-Poppins, 'Poppins'), var(--g-font-body, body);--weight:700;--ls:1%;--size:18px;--size-tablet:18px;--size-mobile:16px;--lh:100%;--lh-tablet:100%;--lh-mobile:100%;--ts:none;word-break:break-word"
-                          class="gp-content-product-button group-active/button:!gp-text-inherit gp-relative gp-flex gp-h-full gp-items-center gp-overflow-hidden gp-break-words group-data-[state=loading]:gp-invisible [&_p]:gp-whitespace-pre-line gp-text button-text">
-                          <p>ADD TO CART</p>
-                        </span>
-                      </div>
-
-                    </a>
-                  </div>
-                  <script class="gps-link"
-                    delay="https://assets.gemcommerce.com/assets-v2/gp-button-v7-5.js?v=1752819567844"
-                    defer="defer"></script>
+                          ShopifyBuy.UI.onReady(client).then(function (ui) {
+                            ui.createComponent('product', {
+                              id: '8722526044317',
+                              node: document.getElementById('product-component-1759738491166'),
+                              moneyFormat: '%24%7B%7Bamount%7D%7D',
+                              options: {
+                                product: {
+                                  contents: {
+                                    img: false,
+                                    title: false,
+                                    price: false,
+                                    description: false,
+                                    button: true
+                                  },
+                                  text: {
+                                    button: 'Add to Cart'
+                                  }
+                                },
+                                cart: {
+                                  startOpen: false
+                                }
+                              }
+                            });
+                          });
+                        }
+                      })();
+                    </script>
+                  </span>
                 </gp-button>
 
                 <style id="custom-css-gODuSJBJTq">
@@ -18373,60 +18168,67 @@
                   <div data-same-height-display-contents style="--jc:start"
                     class="g7wR0HhEtL gp-relative gp-flex gp-flex-col">
 
-                    <gp-button gp-data='{"btnLink":{"link":"#gLoYoIvFyK","target":"_self"}}'
-                      class="gp-flex gp-flex-col">
-                      <div
-                        style="--bs:none;--bw:1px 1px 1px 1px;--bc:#121212;--shadow:none;--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--pageType:GP_PRODUCT;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--mb:10px;--mb-mobile:8px;--ta:left">
-                        <style>
-                          [data-id="g6k_GStB5J"].gp-button-base::before,
-                          [data-id="g6k_GStB5J-interaction"].gp-button-base::before {
+                    <gp-button class="gp-flex gp-flex-col">
+                      <span>
+                        <div
+                          style="display: flex; justify-content: center; align-items: center; margin-left: 25px;">
+                          <div id='product-component-7'></div>
+                        </div>
+                        <script type="text/javascript">
+                          (function () {
+                            var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+                            if (window.ShopifyBuy) {
+                              if (window.ShopifyBuy.UI) {
+                                ShopifyBuyInit();
+                              } else {
+                                loadScript();
+                              }
+                            } else {
+                              loadScript();
+                            }
 
-                            content: "";
-                            height: 100%;
-                            width: 100%;
-                            position: absolute;
-                            pointer-events: none;
-                            top: 0;
-                            left: 0;
-                            border-style: none;
-                            border-width: 1px 1px 1px 1px;
+                            function loadScript() {
+                              var script = document.createElement('script');
+                              script.async = true;
+                              script.src = scriptURL;
+                              (document.head || document.body).appendChild(script);
+                              script.onload = ShopifyBuyInit;
+                            }
 
+                            function ShopifyBuyInit() {
+                              var client = ShopifyBuy.buildClient({
+                                domain: 'uspm04-4r.myshopify.com',
+                                storefrontAccessToken: '9f8dad232b2820eb7533ecbae6688c7b',
+                              });
 
-
-                            border-bottom-left-radius: 8px;
-                            border-bottom-right-radius: 8px;
-                            border-top-left-radius: 8px;
-                            border-top-right-radius: 8px;
-
-
-                          }
-
-
-                          [data-id="g6k_GStB5J"]:hover::before,
-                          [data-id="g6k_GStB5J-interaction"]:hover::before {}
-                        </style>
-                        <a class="gp-trigger-button-link gp-hidden" href=#gLoYoIvFyK
-                          target=_self></a>
-                        <a data-id="g6k_GStB5J" dataId="g6k_GStB5J" data-state="idle"
-                          aria-label="<p>ADD TO CART</p>" href="#gLoYoIvFyK" target="_self"
-                          style="--w:100%;--w-tablet:100%;--w-mobile:100%;--h:Auto;--h-tablet:Auto;--h-mobile:Auto;--pl:24px;--pr:24px;--pt:18px;--pb:18px;--bblr:8px;--bbrr:8px;--btlr:8px;--btrr:8px;--hvr-bblr:8px;--hvr-bbrr:8px;--hvr-btlr:8px;--hvr-btrr:8px;--shadow:none;--bgi: ;--hvr-bgi: ;--hvr-bg:#EA9A2A;--bg:#EA9A2A;--c:var(--g-c-text-3, text-3);--ff:var(--g-font-Poppins, 'Poppins'), var(--g-font-body, body);--weight:700;--ls:1%;--size:18px;--size-tablet:18px;--size-mobile:16px;--lh:100%;--lh-tablet:100%;--lh-mobile:100%"
-                          class="g6k_GStB5J gp-text-center gp-button-base gp-group gp-relative gp-inline-flex gp-max-w-full gp-items-center gp-justify-center gp-no-underline gp-transition-colors gp-duration-200 disabled:gp-btn-disabled disabled:gp-opacity-30 gp-text-g-text-3 ">
-
-                          <div class="gp-inline-flex">
-
-
-                            <span data-gp-text
-                              style="--ff:var(--g-font-Poppins, 'Poppins'), var(--g-font-body, body);--weight:700;--ls:1%;--size:18px;--size-tablet:18px;--size-mobile:16px;--lh:100%;--lh-tablet:100%;--lh-mobile:100%;--ts:none;word-break:break-word"
-                              class="gp-content-product-button group-active/button:!gp-text-inherit gp-relative gp-flex gp-h-full gp-items-center gp-overflow-hidden gp-break-words group-data-[state=loading]:gp-invisible [&_p]:gp-whitespace-pre-line gp-text button-text">
-                              <p>ADD TO CART</p>
-                            </span>
-                          </div>
-
-                        </a>
-                      </div>
-                      <script class="gps-link"
-                        delay="https://assets.gemcommerce.com/assets-v2/gp-button-v7-5.js?v=1752819567844"
-                        defer="defer"></script>
+                              ShopifyBuy.UI.onReady(client).then(function (ui) {
+                                ui.createComponent('product', {
+                                  id: '8722526044317',
+                                  node: document.getElementById('product-component-7'),
+                                  moneyFormat: '%24%7B%7Bamount%7D%7D',
+                                  options: {
+                                    product: {
+                                      contents: {
+                                        img: false,
+                                        title: false,
+                                        price: false,
+                                        description: false,
+                                        button: true
+                                      },
+                                      text: {
+                                        button: 'Add to Cart'
+                                      }
+                                    },
+                                    cart: {
+                                      startOpen: false
+                                    }
+                                  }
+                                });
+                              });
+                            }
+                          })();
+                        </script>
+                      </span>
                     </gp-button>
 
                     <style id="custom-css-g6k_GStB5J">
@@ -19788,60 +19590,67 @@
                   <div data-same-height-display-contents style="--jc:start"
                     class="gmtU9Mfnmy gp-relative gp-flex gp-flex-col">
 
-                    <gp-button gp-data='{"btnLink":{"link":"#gLoYoIvFyK","target":"_self"}}'
-                      class="gp-flex gp-flex-col">
-                      <div
-                        style="--bs:none;--bw:1px 1px 1px 1px;--bc:#121212;--shadow:none;--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--pageType:GP_PRODUCT;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--mb:10px;--mb-mobile:8px;--ta:left">
-                        <style>
-                          [data-id="gVNzOdwslM"].gp-button-base::before,
-                          [data-id="gVNzOdwslM-interaction"].gp-button-base::before {
+                    <gp-button class="gp-flex gp-flex-col">
+                      <span>
+                        <div
+                          style="display: flex; justify-content: center; align-items: center; margin-left: 25px;">
+                          <div id='product-component-8'></div>
+                        </div>
+                        <script type="text/javascript">
+                          (function () {
+                            var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+                            if (window.ShopifyBuy) {
+                              if (window.ShopifyBuy.UI) {
+                                ShopifyBuyInit();
+                              } else {
+                                loadScript();
+                              }
+                            } else {
+                              loadScript();
+                            }
 
-                            content: "";
-                            height: 100%;
-                            width: 100%;
-                            position: absolute;
-                            pointer-events: none;
-                            top: 0;
-                            left: 0;
-                            border-style: none;
-                            border-width: 1px 1px 1px 1px;
+                            function loadScript() {
+                              var script = document.createElement('script');
+                              script.async = true;
+                              script.src = scriptURL;
+                              (document.head || document.body).appendChild(script);
+                              script.onload = ShopifyBuyInit;
+                            }
 
+                            function ShopifyBuyInit() {
+                              var client = ShopifyBuy.buildClient({
+                                domain: 'uspm04-4r.myshopify.com',
+                                storefrontAccessToken: '9f8dad232b2820eb7533ecbae6688c7b',
+                              });
 
-
-                            border-bottom-left-radius: 8px;
-                            border-bottom-right-radius: 8px;
-                            border-top-left-radius: 8px;
-                            border-top-right-radius: 8px;
-
-
-                          }
-
-
-                          [data-id="gVNzOdwslM"]:hover::before,
-                          [data-id="gVNzOdwslM-interaction"]:hover::before {}
-                        </style>
-                        <a class="gp-trigger-button-link gp-hidden" href=#gLoYoIvFyK
-                          target=_self></a>
-                        <a data-id="gVNzOdwslM" dataId="gVNzOdwslM" data-state="idle"
-                          aria-label="<p>ADD TO CART</p>" href="#gLoYoIvFyK" target="_self"
-                          style="--w:100%;--w-tablet:100%;--w-mobile:100%;--h:Auto;--h-tablet:Auto;--h-mobile:Auto;--pl:24px;--pr:24px;--pt:18px;--pb:18px;--bblr:8px;--bbrr:8px;--btlr:8px;--btrr:8px;--hvr-bblr:8px;--hvr-bbrr:8px;--hvr-btlr:8px;--hvr-btrr:8px;--shadow:none;--bgi: ;--hvr-bgi: ;--hvr-bg:#EA9A2A;--bg:#EA9A2A;--c:var(--g-c-text-3, text-3);--ff:var(--g-font-Poppins, 'Poppins'), var(--g-font-body, body);--weight:700;--ls:1%;--size:18px;--size-tablet:18px;--size-mobile:16px;--lh:100%;--lh-tablet:100%;--lh-mobile:100%"
-                          class="gVNzOdwslM gp-text-center gp-button-base gp-group gp-relative gp-inline-flex gp-max-w-full gp-items-center gp-justify-center gp-no-underline gp-transition-colors gp-duration-200 disabled:gp-btn-disabled disabled:gp-opacity-30 gp-text-g-text-3 ">
-
-                          <div class="gp-inline-flex">
-
-
-                            <span data-gp-text
-                              style="--ff:var(--g-font-Poppins, 'Poppins'), var(--g-font-body, body);--weight:700;--ls:1%;--size:18px;--size-tablet:18px;--size-mobile:16px;--lh:100%;--lh-tablet:100%;--lh-mobile:100%;--ts:none;word-break:break-word"
-                              class="gp-content-product-button group-active/button:!gp-text-inherit gp-relative gp-flex gp-h-full gp-items-center gp-overflow-hidden gp-break-words group-data-[state=loading]:gp-invisible [&_p]:gp-whitespace-pre-line gp-text button-text">
-                              <p>ADD TO CART</p>
-                            </span>
-                          </div>
-
-                        </a>
-                      </div>
-                      <script class="gps-link"
-                        delay="https://assets.gemcommerce.com/assets-v2/gp-button-v7-5.js?v=1752819567844"
-                        defer="defer"></script>
+                              ShopifyBuy.UI.onReady(client).then(function (ui) {
+                                ui.createComponent('product', {
+                                  id: '8722526044317',
+                                  node: document.getElementById('product-component-8'),
+                                  moneyFormat: '%24%7B%7Bamount%7D%7D',
+                                  options: {
+                                    product: {
+                                      contents: {
+                                        img: false,
+                                        title: false,
+                                        price: false,
+                                        description: false,
+                                        button: true
+                                      },
+                                      text: {
+                                        button: 'Add to Cart'
+                                      }
+                                    },
+                                    cart: {
+                                      startOpen: false
+                                    }
+                                  }
+                                });
+                              });
+                            }
+                          })();
+                        </script>
+                      </span>
                     </gp-button>
 
                     <style id="custom-css-gVNzOdwslM">
@@ -22417,125 +22226,68 @@
               <div data-same-height-display-contents style="--jc:start"
                 class="gCsNQINO5f gp-relative gp-flex gp-flex-col">
 
-                <gp-button gp-data='{"btnLink":{"link":"#gLoYoIvFyK","target":"_self"}}'
-                  class="gp-flex gp-flex-col">
-                  <div
-                    style="--bs:none;--bw:1px 1px 1px 1px;--bc:#121212;--shadow:none;--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--pageType:GP_PRODUCT;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--mb:10px;--mb-mobile:8px;--ta:left">
-                    <style>
-                      [data-id="g8uJv6NAfK"].gp-button-base::before,
-                      [data-id="g8uJv6NAfK-interaction"].gp-button-base::before {
+                <gp-button class="gp-flex gp-flex-col">
+                  <span>
+                    <div
+                      style="display: flex; justify-content: center; align-items: center; margin-left: 25px;">
+                      <div id='product-component-9'></div>
+                    </div>
+                    <script type="text/javascript">
+                      (function () {
+                        var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+                        if (window.ShopifyBuy) {
+                          if (window.ShopifyBuy.UI) {
+                            ShopifyBuyInit();
+                          } else {
+                            loadScript();
+                          }
+                        } else {
+                          loadScript();
+                        }
 
-                        content: "";
-                        height: 100%;
-                        width: 100%;
-                        position: absolute;
-                        pointer-events: none;
-                        top: 0;
-                        left: 0;
-                        border-style: none;
-                        border-width: 1px 1px 1px 1px;
+                        function loadScript() {
+                          var script = document.createElement('script');
+                          script.async = true;
+                          script.src = scriptURL;
+                          (document.head || document.body).appendChild(script);
+                          script.onload = ShopifyBuyInit;
+                        }
 
+                        function ShopifyBuyInit() {
+                          var client = ShopifyBuy.buildClient({
+                            domain: 'uspm04-4r.myshopify.com',
+                            storefrontAccessToken: '9f8dad232b2820eb7533ecbae6688c7b',
+                          });
 
-
-                        border-bottom-left-radius: 8px;
-                        border-bottom-right-radius: 8px;
-                        border-top-left-radius: 8px;
-                        border-top-right-radius: 8px;
-
-
-                      }
-
-
-                      [data-id="g8uJv6NAfK"]:hover::before,
-                      [data-id="g8uJv6NAfK-interaction"]:hover::before {}
-                    </style>
-                    <a class="gp-trigger-button-link gp-hidden" href=#gLoYoIvFyK target=_self></a>
-                    <a data-id="g8uJv6NAfK" dataId="g8uJv6NAfK" data-state="idle"
-                      aria-label="<p>ADD TO CART</p>" href="#gLoYoIvFyK" target="_self"
-                      style="--w:100%;--w-tablet:100%;--w-mobile:100%;--h:Auto;--h-tablet:Auto;--h-mobile:Auto;--pl:24px;--pr:24px;--pt:18px;--pb:18px;--bblr:8px;--bbrr:8px;--btlr:8px;--btrr:8px;--hvr-bblr:8px;--hvr-bbrr:8px;--hvr-btlr:8px;--hvr-btrr:8px;--shadow:none;--bgi: ;--hvr-bgi: ;--hvr-bg:#EA9A2A;--bg:#EA9A2A;--c:var(--g-c-text-3, text-3);--ff:var(--g-font-Poppins, 'Poppins'), var(--g-font-body, body);--weight:700;--ls:1%;--size:18px;--size-tablet:18px;--size-mobile:16px;--lh:100%;--lh-tablet:100%;--lh-mobile:100%"
-                      class="g8uJv6NAfK gp-text-center gp-button-base gp-group gp-relative gp-inline-flex gp-max-w-full gp-items-center gp-justify-center gp-no-underline gp-transition-colors gp-duration-200 disabled:gp-btn-disabled disabled:gp-opacity-30 gp-text-g-text-3 ">
-
-                      <div class="gp-inline-flex">
-
-
-                        <span data-gp-text
-                          style="--ff:var(--g-font-Poppins, 'Poppins'), var(--g-font-body, body);--weight:700;--ls:1%;--size:18px;--size-tablet:18px;--size-mobile:16px;--lh:100%;--lh-tablet:100%;--lh-mobile:100%;--ts:none;word-break:break-word"
-                          class="gp-content-product-button group-active/button:!gp-text-inherit gp-relative gp-flex gp-h-full gp-items-center gp-overflow-hidden gp-break-words group-data-[state=loading]:gp-invisible [&_p]:gp-whitespace-pre-line gp-text button-text">
-                          <p>ADD TO CART</p>
-                        </span>
-                      </div>
-
-                    </a>
-                  </div>
-                  <script class="gps-link"
-                    delay="https://assets.gemcommerce.com/assets-v2/gp-button-v7-5.js?v=1752819567844"
-                    defer="defer"></script>
+                          ShopifyBuy.UI.onReady(client).then(function (ui) {
+                            ui.createComponent('product', {
+                              id: '8722526044317',
+                              node: document.getElementById('product-component-9'),
+                              moneyFormat: '%24%7B%7Bamount%7D%7D',
+                              options: {
+                                product: {
+                                  contents: {
+                                    img: false,
+                                    title: false,
+                                    price: false,
+                                    description: false,
+                                    button: true
+                                  },
+                                  text: {
+                                    button: 'Add to Cart'
+                                  }
+                                },
+                                cart: {
+                                  startOpen: false
+                                }
+                              }
+                            });
+                          });
+                        }
+                      })();
+                    </script>
+                  </span>
                 </gp-button>
-
-                <style id="custom-css-g8uJv6NAfK">
-                  .g8uJv6NAfK {
-                    background-image: url(https://cdn.shopify.com/s/files/1/0636/8644/3123/files/gempages_567074455126279249-ef44b71e-f99f-459f-88e0-ed181b68ee3b.webp) !important;
-                    background-size: 100% 100% !important;
-                  }
-                </style>
-
-
-
-
-
-
-                <gp-row
-                  gp-data='{"background":{"desktop":{"attachment":"scroll","color":"transparent","image":{"height":0,"src":"","width":0},"position":{"x":50,"y":50},"repeat":"no-repeat","size":"cover","type":"color"}},"uid":"gF5PYWEefY"}'
-                  data-id="gF5PYWEefY" id="gF5PYWEefY" data-same-height-subgrid-container
-                  class="gF5PYWEefY gp-relative gp-mx-auto gp-mb-0 gp-grid gp-max-w-full gp-transition-colors gp-duration-200 gp-ease-in-out [&_*]:gp-max-w-full gp-grid-rows-[1fr]"
-                  style="--bs:none;--bw:1px 1px 1px 1px;--bc:#121212;--shadow:none;--d:grid;--d-mobile:grid;--d-tablet:grid;--op:100%;--pageType:GP_PRODUCT;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--cg:6px;--cg-mobile:5px;--gtc:minmax(0, auto) minmax(0, auto);--gtc-mobile:minmax(0, auto) minmax(0, auto);--w:var(--g-ct-w, 1200px);--h:auto;--bgc:transparent;--bgi:url();--bgp:50% 50%;--bgs:cover;--bgr:no-repeat;--bga:scroll;--pc:center">
-
-
-                  <div data-same-height-display-contents style="--jc:center"
-                    class="g4pShYrWLq gp-relative gp-flex gp-flex-col">
-
-                    <div id="gZRp1IZ-2l" class="gp-leading-[0] gZRp1IZ-2l"
-                      style="--bs:none;--bw:1px 1px 1px 1px;--bc:#121212;--shadow:none;--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--pageType:GP_PRODUCT;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--ta:left">
-                      <div data-id="gZRp1IZ-2l"
-                        class="icon-wrapper gp-inline-flex gp-overflow-hidden gZRp1IZ-2l "
-                        style="--bs:none;--bw:1px 1px 1px 1px;--bc:#000000">
-
-                        <div>
-                          <span
-                            style="--c:var(--g-c-line-3, line-3);--t:rotate(0deg);--w:12px;--w-tablet:12px;--w-mobile:11px;--h:12px;--h-tablet:12px;--h-mobile:11px;--minw:12px;--minw-tablet:12px;--minw-mobile:11px;--height-desktop:12px;--height-tablet:12px;--height-mobile:11px"
-                            class="gp-inline-flex gp-items-center gp-justify-center gp-overflow-hidden [&>svg]:!gp-h-[var(--height-desktop)] [&>svg]:!gp-w-auto tablet:[&>svg]:!gp-h-[var(--height-tablet)] mobile:[&>svg]:!gp-h-[var(--height-mobile)] gp-text-g-line-3"><svg
-                              data-id="567105154847867724" xmlns="http://www.w3.org/2000/svg"
-                              width="13" height="9" viewBox="0 0 13 9" fill="none">
-                              <path
-                                d="M12.6096 0.373281C12.5301 0.293062 12.4354 0.22939 12.3311 0.185939C12.2268 0.142488 12.115 0.120117 12.002 0.120117C11.889 0.120117 11.7771 0.142488 11.6728 0.185939C11.5685 0.22939 11.4739 0.293062 11.3943 0.373281L5.0181 6.75806L2.33923 4.07063C2.25662 3.99083 2.1591 3.92808 2.05224 3.88597C1.94538 3.84386 1.83128 3.82321 1.71643 3.82519C1.60159 3.82718 1.48827 3.85177 1.38293 3.89755C1.27759 3.94334 1.1823 4.00942 1.1025 4.09203C1.0227 4.17464 0.959954 4.27216 0.917842 4.37902C0.87573 4.48588 0.855078 4.59998 0.857064 4.71482C0.859051 4.82966 0.883639 4.94299 0.929422 5.04833C0.975205 5.15367 1.04129 5.24896 1.1239 5.32876L4.41043 8.61529C4.49 8.69551 4.58466 8.75918 4.68895 8.80263C4.79325 8.84608 4.90511 8.86845 5.0181 8.86845C5.13108 8.86845 5.24295 8.84608 5.34724 8.80263C5.45154 8.75918 5.5462 8.69551 5.62576 8.61529L12.6096 1.63141C12.6965 1.55126 12.7659 1.45399 12.8133 1.34572C12.8607 1.23746 12.8852 1.12054 12.8852 1.00234C12.8852 0.884148 12.8607 0.767232 12.8133 0.658965C12.7659 0.550698 12.6965 0.453427 12.6096 0.373281Z"
-                                fill="#524747" />
-                            </svg></span>
-                        </div>
-                      </div>
-                    </div>
-
-                  </div>
-                  <div data-same-height-display-contents style="--jc:center"
-                    class="gD--RgQuRy gp-relative gp-flex gp-flex-col">
-
-
-                    <div data-id="gB_x0gmZCh" class="gB_x0gmZCh"
-                      style="--ta:left;--bs:none;--bw:1px 1px 1px 1px;--bc:#121212;--shadow:none;--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--pageType:GP_PRODUCT;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--dynamic-source-color:#F4F4F4"
-                      data-test-force-publish="1755505477417">
-                      <div class="gp-flex" style="--jc:left">
-                        <div data-gp-text class=" gp-text-instant gp-text"
-                          style="--w:100%;--w-tablet:100%;--w-mobile:100%;--tdt:auto;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--ts:none;--ta:left;--line-clamp:unset;--line-clamp-tablet:unset;--line-clamp-mobile:unset;--ff:var(--g-font-Poppins, 'Poppins'), var(--g-font-body, body);--weight:400;--ls:0px;--size:15px;--size-tablet:15px;--size-mobile:13px;--lh:136%;--lh-tablet:136%;--lh-mobile:138%;--c:#524747;word-break:break-word;--bgc:transparent;--bgi:url();--bgp:50% 50%;--bgs:cover;--bgr:no-repeat;--bga:scroll;overflow:hidden;--tdl: ;">
-                          <p>100% Satisfaction Guarantee</p>
-                        </div>
-                      </div>
-                    </div>
-
-                  </div>
-
-
-                </gp-row>
-
-
               </div>
 
 
